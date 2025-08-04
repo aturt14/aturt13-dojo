@@ -1,0 +1,14 @@
+id: aturt13
+name: aturt13
+award:
+  emoji: 🐢
+image: pwncollege/challenge-legacy:latest
+modules:
+  - id: blindfmt
+    name: Blind Format String Exploits
+    description: |
+      Exploiting format string vulnerabilities may seem challenging at first, but it essentially allows an attacker to gain both arbitrary read and write primitives. Once those primitive are obtained, code execution is just one step away. However, what happens when the output of the format string is not visible?
+    challenges:
+      - id: level-1
+        name: "level1"
+        description: Use a format string exploit to overwrite a GOT entry to gain code execution.
