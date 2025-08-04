@@ -12,3 +12,9 @@ modules:
       - id: level-1
         name: "level1"
         description: Use a blind format string exploit to overwrite a GOT entry to gain code execution.
+      - id: level-2
+        name: "level2"
+        description: Use a blind format string exploit to perform ROP.
+      - id: level-3
+        name: "level3"
+        description: Use a blind format string exploit to perform ROP in a constrained environment.
