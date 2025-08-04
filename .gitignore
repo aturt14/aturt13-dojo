@@ -1,0 +1,4 @@
+# Ignore exploits
+**/e.py
+# Ignore source
+**/*.c
