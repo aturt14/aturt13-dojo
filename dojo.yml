@@ -11,4 +11,4 @@ modules:
     challenges:
       - id: level-1
         name: "level1"
-        description: Use a format string exploit to overwrite a GOT entry to gain code execution.
+        description: Use a blind format string exploit to overwrite a GOT entry to gain code execution.
