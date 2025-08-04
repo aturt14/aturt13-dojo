@@ -7,7 +7,7 @@ modules:
   - id: blindfmt
     name: Blind Format String Exploits
     description: |
-      Exploiting format string vulnerabilities may seem challenging at first, but it essentially allows an attacker to gain both arbitrary read and write primitives. Once those primitive are obtained, code execution is just one step away. However, what happens when the output of the format string is not visible?
+      Exploiting format string vulnerabilities may seem challenging at first, but it essentially allows an attacker to gain both arbitrary read and write primitives. Once those primitives are obtained, code execution is just one step away. However, what happens when the output of the format string is not visible?
     challenges:
       - id: level-1
         name: "level1"
