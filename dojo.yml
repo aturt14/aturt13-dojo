@@ -14,7 +14,9 @@ modules:
         description: Use a blind format string exploit to overwrite a GOT entry to gain code execution.
       - id: level-2
         name: "level2"
-        description: Use a blind format string exploit to perform ROP.
+        description: |
+          Use a blind format string exploit to perform ROP.
+          Hint: The answer might be 42 this time.
       - id: level-3
         name: "level3"
         description: Use a blind format string exploit to perform ROP in a constrained environment.
