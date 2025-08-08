@@ -1,5 +1,6 @@
 id: aturt13-dojo
 name: aturt13 Dojo
+type: public
 award:
   emoji: 🐢
 image: pwncollege/challenge-legacy:latest
