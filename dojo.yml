@@ -1,0 +1,38 @@
+id: aturt13-dojo
+name: aturt13 Dojo
+type: public
+award:
+  emoji: 🐢
+image: pwncollege/challenge-legacy:latest
+modules:
+  - id: blindfmt
+    name: Blind Format String Exploits
+    description: |
+      Exploiting format string vulnerabilities may seem challenging at first, but it essentially allows an attacker to gain both arbitrary read and write primitives. Once those primitives are obtained, code execution is just one step away. However, what happens when the output of the format string is not visible?
+    challenges:
+      - id: level-1
+        name: "level1"
+        description: Use a blind format string exploit to overwrite a GOT entry to gain code execution.
+      - id: level-2
+        name: "level2"
+        description: |
+          What you see is all there is. What if you  can't see anything? Use a blind format string exploit to perform ROP to gain code execution.
+          Hint: The answer might be 42.
+      - id: level-3
+        name: "level3"
+        description: No more bruteforce! Be gentle this time. Can you read using arbitrary write?
+  - id: fuzzing
+    name: Fuzzing 
+    image: aturt13/pwncollege-dojo-aflplusplus
+    description: |
+      Identifying vulnerabilities in large codebases through manual means is both inefficient and time-consuming. As code length increases, complex interdependent elements hinder manual analysis. Race conditions and intricate heap corruption vulnerabilities can be oftentimes triggered only by a very complex sequence of actions. As human minds struggle to manually assess vast amounts of data, we can leverage computers and algorithms to do the hard work for us.
+      THIS MODULE IS CURRENTLY IN DEVELOPMENT, SO IT IS ENTIRELY POSSIBLE THAT THE CHALLENGES ARE EITHER UNSOLVABLE OR DO NOT WORK.
+    challenges:
+      - id: level-1-0
+        name: "level1.0"
+        description: |
+          Leverage AFL++ to find an input that causes the binary to segfault.
+      - id: level-1-1
+        name: "level1.1"
+        description: |
+          Exploit the binary.
