@@ -26,6 +26,13 @@ modules:
     image: aturt13/pwncollege-dojo-aflplusplus:latest
     description: |
       Identifying vulnerabilities in large codebases through manual means is both inefficient and time-consuming. As code length increases, complex interdependent elements hinder manual analysis. Race conditions and intricate heap corruption vulnerabilities can be oftentimes triggered only by a very complex sequence of actions. As human minds struggle to manually assess vast amounts of data, we can leverage computers and algorithms to do the hard work for us.
+
+      You might want to add the following to your shell init file:
+      ```
+      export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+      export AFL_SKIP_CPUFREQ=1
+      ```
+
       THIS MODULE IS CURRENTLY IN DEVELOPMENT, SO IT IS ENTIRELY POSSIBLE THAT THE CHALLENGES ARE EITHER UNSOLVABLE OR DO NOT WORK.
     challenges:
       - id: level-1-0
