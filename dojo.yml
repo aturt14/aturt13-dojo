@@ -23,7 +23,7 @@ modules:
         description: No more bruteforce! Be gentle this time. Can you read using arbitrary write?
   - id: fuzzing
     name: Fuzzing 
-    image: aturt13/pwncollege-dojo-aflplusplus
+    image: aturt13/pwncollege-dojo-aflplusplus:latest
     description: |
       Identifying vulnerabilities in large codebases through manual means is both inefficient and time-consuming. As code length increases, complex interdependent elements hinder manual analysis. Race conditions and intricate heap corruption vulnerabilities can be oftentimes triggered only by a very complex sequence of actions. As human minds struggle to manually assess vast amounts of data, we can leverage computers and algorithms to do the hard work for us.
       THIS MODULE IS CURRENTLY IN DEVELOPMENT, SO IT IS ENTIRELY POSSIBLE THAT THE CHALLENGES ARE EITHER UNSOLVABLE OR DO NOT WORK.
