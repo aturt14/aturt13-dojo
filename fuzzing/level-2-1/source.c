@@ -8,7 +8,7 @@
 #define OPPONENT_NAME "cubic"
 #define IDX_ERROR -1
 
-typedef struct Player {
+typedef struct {
     char name[0x20];
     int money;
 } Player;
