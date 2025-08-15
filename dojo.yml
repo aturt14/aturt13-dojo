@@ -38,8 +38,16 @@ modules:
       - id: level-1-0
         name: "level1.0"
         description: |
-          Leverage AFL++ to find an input that causes the binary to segfault.
+          Leverage afl-fuzz and afl-clang-fast to find an input that causes the program to crash. You have the source code available.
       - id: level-1-1
         name: "level1.1"
+        description: |
+          Exploit the binary.
+      - id: level-2-0
+        name: "level2.0"
+        description: |
+          Use afl-fuzz with dictionaries to cause the program to crash.
+      - id: level-2.1
+        name: "level2.1"
         description: |
           Exploit the binary.
