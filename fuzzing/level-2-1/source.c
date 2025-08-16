@@ -13,11 +13,11 @@ typedef struct {
     int money;
 } Player;
 
-void new_player(Player** players, char* name, int idx) {
-    Player* p = malloc(sizeof(Player));
+void new_player(Player* players, char* name, int idx) {
+    Player p;
     // TODO: implement a more random algorithm
-    strcpy(p->name, name);
-    p->money = 0x42 + p->name[0];
+    strcpy(p.name, name);
+    p.money = 0x42 + p.name[0];
     players[idx] = p;
 }
 
@@ -41,7 +41,7 @@ void remove_newline(char* s, int size) {
     }
 }
 
-void new_player_interactive(Player** players) {
+void new_player_interactive(Player* players) {
     char name[0x20];
 
     puts("Enter player name:");
@@ -57,17 +57,17 @@ void new_player_interactive(Player** players) {
     }
 }
 
-void fight(Player** players) {
+void fight(Player* players) {
     new_player(players, OPPONENT_NAME, 7);
     int idx = read_player_index();
     if (idx != IDX_ERROR) {
-        if (players[idx] == NULL) {
+        if (players[idx].money == 0) {
             puts("Invalid player!");
             return;
         }
-        printf("%s fights against %s!\n", players[idx]->name, players[7]->name);
-        if (players[idx]->money > players[7]->money) {
-            printf("%s won!\n", players[idx]->name);
+        printf("%s fights against %s!\n", players[idx].name, players[7].name);
+        if (players[idx].money > players[7].money) {
+            printf("%s won!\n", players[idx].name);
         }
         else {
             puts("You lost forever!");
@@ -78,7 +78,7 @@ void fight(Player** players) {
 
 void challenge() {
     char cmd[0x10];
-    Player* players[8] = {NULL};
+    Player players[8] = {0};
 
     puts("new_player/fight/exit");
     while (fgets(cmd, sizeof(cmd), stdin)) {
