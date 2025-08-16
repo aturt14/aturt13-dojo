@@ -104,6 +104,7 @@ void challenge() {
 }
 
 int main(int argc, char** argv) {
+    signal(SIGSEGV, signal_handler);
     puts("In this module, you'll learn about fuzzing with AFL++.");
     puts("You can check out the AFL++ project on GitHub:");
     puts("https://github.com/AFLplusplus/AFLplusplus");
