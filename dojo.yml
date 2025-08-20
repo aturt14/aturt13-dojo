@@ -10,17 +10,23 @@ modules:
     description: |
       Exploiting format string vulnerabilities may seem challenging at first, but it essentially allows an attacker to gain both arbitrary read and write primitives. Once those primitives are obtained, code execution is just one step away. However, what happens when the output of the format string is not visible?
     challenges:
-      - id: level-1
-        name: "level1"
-        description: Use a blind format string exploit to overwrite a GOT entry to gain code execution.
+      - id: level-0
+        name: "level0"
+        description: Refresh your knowledge of writing arbitrary values with format strings.
+      - id: level-1-0
+        name: "level1.0"
+        description: Copy a secret to a known address.
+      - id: level-1-1
+        name: "level1.1"
+        description: Copy a secret to an unknown address.
       - id: level-2
         name: "level2"
         description: |
-          What you see is all there is. What if you  can't see anything? Use a blind format string exploit to perform ROP to gain code execution.
-          Hint: The answer might be 42.
+          What you see is all there is. What if you can't see anything? Use a blind format string exploit to perform ROP to gain code execution.
+          Hint: The answer might be `42`.
       - id: level-3
         name: "level3"
-        description: No more bruteforce! Be gentle this time. Can you read using arbitrary write?
+        description: No more bruteforce! Can you read using arbitrary write?
   - id: fuzzing
     name: Fuzzing 
     image: aturt13/pwncollege-dojo-aflplusplus:latest
