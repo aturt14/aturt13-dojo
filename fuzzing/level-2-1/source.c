@@ -15,8 +15,8 @@ typedef struct {
 
 void new_player(Player* players, char* name, int idx) {
     Player p;
+    memcpy(p.name, name, sizeof(p.name));
     // TODO: implement a more random algorithm
-    strcpy(p.name, name);
     p.money = 0x42 + p.name[0];
     players[idx] = p;
 }
