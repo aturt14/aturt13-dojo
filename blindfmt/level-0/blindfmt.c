@@ -9,8 +9,8 @@ int main(int argc, char** argv) {
     printf("Welcome to %s!\n", argv[0]);
     puts("In this challenge, you are able to change a format string which will then be used to write to /dev/null.");
     puts("/dev/null seems to be empty:");
-    puts("system(\"cat /dev/null\")");
-    system("cat /dev/null");
+    puts("system(\"/usr/bin/cat /dev/null\")");
+    system("/usr/bin/cat /dev/null");
     puts("Therefore, you won't be able to see the format string output.");
     puts("This challenge is compiled without PIE and with Partial RELRO, so it should be fairly simple!");
     FILE* file = fopen("/dev/null", "w");
