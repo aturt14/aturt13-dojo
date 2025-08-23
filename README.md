@@ -1,5 +1,5 @@
 # aturt13 Dojo
-aturt13's dojo for pwn.college. The purpose of this dojo is to extend Blue Belt material from pwn.college (e.g. *Blind Format String Exploits* could be thought of as an extension of *Format String Exploits*).
+aturt13's dojo for pwn.college. The main purpose of this dojo is to extend Blue Belt material from pwn.college (e.g. *Blind Format String Exploits* could be thought of as an extension of *Format String Exploits*).
 
 ## Modules
 The dojo currently contains 2 modules: *Blind Format String Exploits* and *Fuzzing*.
