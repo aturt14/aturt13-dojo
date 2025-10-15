@@ -38,10 +38,6 @@ modules:
       export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
       export AFL_SKIP_CPUFREQ=1
       ```
-
-      THIS MODULE IS CURRENTLY IN DEVELOPMENT, SO IT IS ENTIRELY POSSIBLE THAT THE CHALLENGES ARE EITHER UNSOLVABLE OR DO NOT WORK.
-
-      I am currently trying to make the challenges more focused on fuzzing and less focused on exploiting, so levels `level\d\.1` might not be exploitable. I will modify them in the future if that's the case.
     challenges:
       - id: level-1-0
         name: "level1.0"
