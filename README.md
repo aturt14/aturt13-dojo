@@ -2,7 +2,7 @@
 aturt13's dojo for pwn.college. The main purpose of this dojo is to extend Blue Belt material from pwn.college (e.g. *Blind Format String Exploits* could be thought of as an extension of *Format String Exploits*).
 
 ## Modules
-The dojo currently contains 2 modules: *Blind Format String Exploits* and *Fuzzing*.
+The dojo currently contains 3 modules: *Blind Format String Exploits*, *Blind Dynamic Allocator Exploitation*, and *Fuzzing*.
 
 ### Blind Format String Exploits
 [*Blind Format String Exploits*](https://pwn.college/aturt13-dojo~4fac9429/blindfmt/) are an extension of [*Format String Exploits*](https://pwn.college/software-exploitation/format-string-exploits/). I was inspired primarily by a challenge from JustCTF, which was linked to an amazing [exploit](https://www.synacktiv.com/en/publications/exploiting-a-blind-format-string-vulnerability-in-modern-binaries-a-case-study-from) from Pwn2Own 2024. I decided to attempt it on my own prior to reading the writeup and made a module to share this interesting challenge with others.
