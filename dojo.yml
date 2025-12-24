@@ -27,6 +27,17 @@ modules:
       - id: level-3
         name: "level3"
         description: No more bruteforce! Can you read using arbitrary write?
+  - id: blindheap
+    name: Blind Dynamic Allocator Exploitation
+    description: |
+      The field of dynamic allocator exploitation appears to be as dynamic as the allocators themselves. Whenever a new PoC showcasing a particularly effective abuse of the dynamic allocator is patched, fresh methods of heap exploitation emerge. After the introduction of safelinking, it was widely believed that leakless heap exploitation had been permanently eliminated from the hacking landscape. It was stated that a successful exploit requires at least two different vulnerabilities. Yet is this really the case?
+    challenges:
+      - id: level-1
+        name: "level1"
+        description: Practice for the next level with failing eyesight.
+      - id: level-2
+        name: "level-2"
+        description: Now you're completely blind! But perhaps you'll find a way to restore your sight...
   - id: fuzzing
     name: Fuzzing 
     image: aturt13/pwncollege-dojo-aflplusplus:latest
