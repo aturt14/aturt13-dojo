@@ -36,7 +36,7 @@ modules:
         name: "level1"
         description: Practice for the next level with failing eyesight.
       - id: level-2
-        name: "level-2"
+        name: "level2"
         description: Now you're completely blind! But perhaps you'll find a way to restore your sight...
   - id: fuzzing
     name: Fuzzing 
