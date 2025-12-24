@@ -9,5 +9,8 @@ The dojo currently contains 2 modules: *Blind Format String Exploits* and *Fuzzi
 
 *Blind Format String Exploits* can also be viewed as a demonstration of how an exploit can leverage copying using the `%*` format specifier to hijack control flow. Although the slides from *Format String Exploits* mention this capability, there is no challenge testing the student's understanding of it.
 
+### Blind Heap Allocator Exploitation
+[*Blind Heap Allocator Exploitation*](https://pwn.college/aturt13-dojo~4fac9429/blindheap/) is an extension of [*Dynamic Allocator Exploitation*](https://pwn.college/software-exploitation/dynamic-allocator-exploitation/). A challenge at Bootcamp Slovakia sparked my interest in more sophisicated heap exploitation techniques that do not require an additional vulnerability in the form of a memory leak. Having previously created a module on leakless format string exploitation techniques ([*Blind Format String Exploits*](https://pwn.college/aturt13-dojo~4fac9429/blindfmt/)), I concluded that it might be a good idea to incorporate my learning experience into another *Blind Exploitation* module.
+
 ### Fuzzing
 [*Fuzzing*](https://pwn.college/aturt13-dojo~4fac9429/fuzzing/) is a module focused primarily on teaching [AFL++](https://github.com/AFLplusplus/AFLplusplus) syntax in the pwn.college challenge-based style. Shortly after publishing the first challenges, the [*Fuzz*](https://pwn.college/fuzz~c7f7b8c2/) dojo emerged which may serve better for the purpose of learning fuzzing. Nevertheless, some challenges from the Fuzzing module remain interesting to in the exploitation sense.
