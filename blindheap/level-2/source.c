@@ -10,9 +10,9 @@
 #define MIN_ALLOC 0x1
 #define MAX_ALLOC 0x100000
 
-// #define PRACTICE
+// #define CZECK
 
-#ifdef PRACTICE
+#ifdef CZECK
 #define TCACHE_MAX_BINS 64
 typedef struct tcache_perthread_struct {
     u_int16_t num_slots[TCACHE_MAX_BINS];
@@ -80,7 +80,7 @@ void remove_newline(char* str) {
     if (newline) *newline = '\0';
 }
 
-#ifdef PRACTICE
+#ifdef CZECK
 void u_leak(char** allocations) {
     u_int8_t libc_leak = ((size_t)&exit >> 12) & 0xf;
     u_int8_t heap_leak = ((size_t)allocations[0] >> 12) & 0xf;
@@ -90,7 +90,6 @@ void u_leak(char** allocations) {
 }
 
 void u_check(char** allocations) {
-    printf("tcache_perthread_struct = %p\n", tps);
     if (tps->entries[0] == (void*)0x4242424242424242) {
         char flag_buf[128] = {};
         int fd = open("/flag", O_RDONLY);
@@ -102,7 +101,7 @@ void u_check(char** allocations) {
 #endif
 
 bool challenge_loop(char** allocations, size_t* sizes) {
-#ifdef PRACTICE
+#ifdef CZECK
     puts("malloc/free/read/check/leak/exit");
 #else
     puts("malloc/free/read/exit");
@@ -116,7 +115,7 @@ bool challenge_loop(char** allocations, size_t* sizes) {
     if (strcmp("malloc", cmd_buf) == 0) u_malloc(allocations, sizes);
     else if (strcmp("free", cmd_buf) == 0) u_free(allocations, sizes);
     else if (strcmp("read", cmd_buf) == 0) u_read(allocations, sizes);
-#ifdef PRACTICE
+#ifdef CZECK
     else if (strcmp("check", cmd_buf) == 0) u_check(allocations);
     else if (strcmp("leak", cmd_buf) == 0) u_leak(allocations);
 #endif
@@ -131,10 +130,11 @@ int main(int argc, char** argv) {
     size_t sizes[ALLOCATIONS_SIZE] = {};
 
     puts("In this challenge, you will perform a heap exploit without having access to a write function.");
-#ifdef PRACTICE
+#ifdef CZECK
     tps = sbrk(0) - 0x21000 + 0x10;
-    puts("This challenge has practice mode enabled!");
+    puts("This challenge is in czeck mode enabled!");
     puts("That means you only need to achieve control of the tcache_perthread_struct (at the start of the heap).");
+    puts("Afterwards, you can call check to get your flag!");
     puts("Additionally, you get a byte worth of leaks!");
 #endif
     while (challenge_loop(allocations, sizes));
