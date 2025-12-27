@@ -82,10 +82,8 @@ void remove_newline(char* str) {
 
 #ifdef CZECK
 void u_leak(char** allocations) {
-    u_int8_t libc_leak = ((size_t)&exit >> 12) & 0xf;
     u_int8_t heap_leak = ((size_t)allocations[0] >> 12) & 0xf;
-    puts("Least significant ASLR nibbles:");
-    printf("Libc: 0x%hhx\n", libc_leak);
+    puts("Least significant ASLR nibble of heap:");
     printf("Heap: 0x%hhx\n", heap_leak);
 }
 
@@ -135,7 +133,7 @@ int main(int argc, char** argv) {
     puts("This challenge is in czeck mode enabled!");
     puts("That means you only need to achieve control of the tcache_perthread_struct (at the start of the heap).");
     puts("Afterwards, you can call check to get your flag!");
-    puts("Additionally, you get a byte worth of leaks!");
+    puts("Additionally, you get a nibble worth of leaks!");
 #endif
     while (challenge_loop(allocations, sizes));
     return 0;
