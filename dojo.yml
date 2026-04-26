@@ -82,3 +82,14 @@ modules:
         name: "level4.1"
         description: |
           Exploit the binary.
+  - id: limprim
+    name: Limited Primitives
+    description: |
+      Challenges used to illustrate basic memory corruption bugs are often criticized for being too unrealistic. Sometimes real-world bugs are extremely difficult to exploit. Nevertheless, the core procedure remains the same: gain primitives, chain them, attain better control over the program and finally hijack control flow.
+    challenges:
+      - id: level-1
+        name: "Garden"
+        description: |
+          I made this challenge for Czech Cybersecurity Competition 2025. Actually, it was 100% made by a LLM without the exploitability requirement. I only discovered it was indeed exploitable after long hours of debugging. 
+
+          Use your limited add primitive to get a root shell. Enjoy!
