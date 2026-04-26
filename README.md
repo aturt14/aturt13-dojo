@@ -14,3 +14,6 @@ The dojo currently contains 3 modules: *Blind Format String Exploits*, *Blind Dy
 
 ### Fuzzing
 [*Fuzzing*](https://pwn.college/aturt13-dojo~4fac9429/fuzzing/) is a module focused primarily on teaching [AFL++](https://github.com/AFLplusplus/AFLplusplus) syntax in the pwn.college challenge-based style. Shortly after publishing the first challenges, the [*Fuzz*](https://pwn.college/fuzz~c7f7b8c2/) dojo emerged which may serve better for the purpose of learning fuzzing. Nevertheless, some challenges from the Fuzzing module remain interesting to in the exploitation sense.
+
+### Limited Primitives
+[*Limited Primitives*](https://pwn.college/aturt13-dojo~4fac9429/limprim/) is a module that will contain challenges that deal with *limited primitives*, i.e. situations in which there is no free arbitrary write or arbitrary read but rather something like an off-by-one or a limited add primitive.
