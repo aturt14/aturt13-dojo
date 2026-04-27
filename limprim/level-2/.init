@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+/challenge/entrypoint.sh &
+chmod 0755 /challenge/cibule
+chmod 0755 /challenge/entrypoint.sh
