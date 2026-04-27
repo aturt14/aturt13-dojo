@@ -97,3 +97,12 @@ modules:
         name: "Cibule"
         description: |
           Limited by shellcode length, seccomp and remote connection. Good luck.
+  - id: vtables
+    name: Vtables
+    description: |
+      How simple it was to manipulate `vtable` and `_wide_data` in `FILE_struct_plus`! As if libc developers *wanted* us to exploit programs this way. How nice of them. But what if `FILE_struct_plus` were not the only structure that makes use of vtables, i.e. tables of functions? What if there were a programming language that everyone loves and enables vtable use almost everywhere...
+    challenges:
+      - id: level-1
+        name: "What is a vtable?"
+        description: |
+          Leverage a vtable exploit to get a root shell.
