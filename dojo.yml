@@ -93,7 +93,6 @@ modules:
           I made this challenge for Czech Cybersecurity Competition 2025. Actually, it was 100% made by a LLM without the exploitability requirement. I only discovered it was indeed exploitable after long hours of debugging. 
 
           Use your limited add primitive to get a root shell. Enjoy!
-    challenges:
       - id: level-2
         name: "Cibule"
         description: |
