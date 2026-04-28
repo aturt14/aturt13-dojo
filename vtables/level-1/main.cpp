@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <memory>
 
 class Animal {
 public:
@@ -42,7 +41,7 @@ public:
     }
 };
 
-using Farm = std::vector<std::unique_ptr<Animal>>;
+using Farm = std::vector<Animal*>;
 
 std::string get_name() {
     std::string name;
@@ -62,20 +61,22 @@ void do_add_animal(Farm& farm) {
     std::string name = get_name();
     std::string type = get_type();
     if (type == "cat") {
-        farm.push_back(std::make_unique<Cat>(name));
+        farm.emplace_back(new Cat(name));
     }
     else if (type == "dog") {
-        farm.push_back(std::make_unique<Dog>(name));
+        farm.emplace_back(new Dog(name));
     }
     else {
-        farm.push_back(std::make_unique<Pig>(name));
+        farm.emplace_back(new Pig(name));
     }
 }
 
-void die(const Animal& animal) {
+// Please don't hurt animals
+void die(Animal& animal) {
     animal.make_sound();
     animal.make_sound();
     std::cout << animal.get_name() << " died in pain." << std::endl;
+    delete &animal;
 }
 
 void do_kill_animal(Farm& farm) {
@@ -122,12 +123,28 @@ bool menu(Farm& farm, std::string& message) {
     return true;
 }
 
+bool menu_loop_with_sounds(Farm& farm, std::string& message, bool day) {
+    for (const auto& animal: farm) {
+        if (day) {
+            animal->make_sound();
+        }
+        else {
+            std::cout << animal->get_name() << " sleeps calmly. ZZZzzz." << std::endl;
+        }
+        if (!menu(farm, message)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void do_farm_things(Farm& farm) {
     std::string message;
     while (true) {
-        for (const auto& animal: farm) {
-            animal->make_sound();
-            if (!menu(farm, message)) {
+        // Animals sleep during the night
+        for (bool day: {true, false}) {
+            std::cout << (day? "A new day begins! The animals are waking up." : "The night unfurls its ink across the sky. The animals are going to sleep...") << std::endl;
+            if (!menu_loop_with_sounds(farm, message, day)) {
                 return;
             }
         }
@@ -138,9 +155,9 @@ void do_farm_things(Farm& farm) {
 int main(int argc, char* argv[]) {
     Farm farm;
 
-    farm.push_back(std::make_unique<Cat>("Prinzessin"));
-    farm.push_back(std::make_unique<Dog>("Servac"));
-    farm.push_back(std::make_unique<Pig>("Napoleon"));
+    farm.emplace_back(new Cat("Prinzessin"));
+    farm.emplace_back(new Dog("Servac"));
+    farm.emplace_back(new Pig("Napoleon"));
 
     do_farm_things(farm);
 
