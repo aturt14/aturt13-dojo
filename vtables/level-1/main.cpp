@@ -72,6 +72,7 @@ void do_add_animal(Farm& farm) {
     }
 }
 
+// Please don't hurt animals
 void die(const Animal& animal) {
     animal.make_sound();
     animal.make_sound();
@@ -122,12 +123,28 @@ bool menu(Farm& farm, std::string& message) {
     return true;
 }
 
+bool menu_loop_with_sounds(Farm& farm, std::string& message, bool day) {
+    for (const auto& animal: farm) {
+        if (day) {
+            animal->make_sound();
+        }
+        else {
+            std::cout << animal->get_name() << " sleeps calmly. ZZZzzz." << std::endl;
+        }
+        if (!menu(farm, message)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void do_farm_things(Farm& farm) {
     std::string message;
     while (true) {
-        for (const auto& animal: farm) {
-            animal->make_sound();
-            if (!menu(farm, message)) {
+        // Animals sleep during the night
+        for (bool day: {true, false}) {
+            std::cout << (day? "A new day begins! The animals are waking up." : "The night unfurls its ink across the sky. The animals are going to sleep...") << std::endl;
+            if (!menu_loop_with_sounds(farm, message, day)) {
                 return;
             }
         }
