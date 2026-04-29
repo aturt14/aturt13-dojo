@@ -100,7 +100,7 @@ modules:
   - id: cppexp
     name: C++ Exploitation
     description: |
-       What if there were a programming language that would allow to blow your whole leg off...
+       What if there were a programming language that allowed you to blow your whole leg off...
     challenges:
       - id: level-1
         name: "What is a vtable?"
