@@ -108,3 +108,8 @@ modules:
           How simple it was to manipulate `vtable` and `_wide_data` in `FILE_struct_plus`! As if libc developers *wanted* us to exploit programs this way. How nice of them. But what if `FILE_struct_plus` were not the only structure that makes use of vtables, i.e. tables of function pointers?
 
           Leverage a vtable exploit to get a root shell.
+
+          Btw. I felt a bit paranoid, so I added some extra measures:
+          ```sh
+          g++ -Wl,-z,relro,-z,now -fstack-protector -fcf-protection=full -o main main.cpp
+          ```
