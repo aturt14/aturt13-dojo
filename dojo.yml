@@ -97,6 +97,10 @@ modules:
         name: "Cibule"
         description: |
           Limited by shellcode length, seccomp and remote connection. Good luck.
+      - id: level-3
+        name: "Exit"
+        description: |
+          I wanna quit!
   - id: cppexp
     name: C++ Exploitation
     description: |
