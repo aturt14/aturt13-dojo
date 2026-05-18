@@ -101,8 +101,6 @@ modules:
         name: "Exit"
         description: |
           I wanna quit!
-
-          Disclaimer: *this challenge might be unsolvable.*
   - id: cppexp
     name: C++ Exploitation
     description: |

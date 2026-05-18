@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-chmod 777 /challenge/ld-linux-x86-64.so.2
+chmod 0733 /challenge/ld-linux-x86-64.so.2
