@@ -18,7 +18,7 @@ void menu() {
     printf(">> ");
 }
 
-void memcopy(char* dest, const char* src, size_t n) {
+void memcopy(char* dest, const char* src, int n) {
     for (; n >= 0; --n) {
         dest[n] = src[n];
     }
