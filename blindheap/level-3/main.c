@@ -19,7 +19,7 @@ void menu() {
 }
 
 void memcopy(char* dest, const char* src, size_t n) {
-    for (; n > 0; --n) {
+    for (; n >= 0; --n) {
         dest[n] = src[n];
     }
 }
