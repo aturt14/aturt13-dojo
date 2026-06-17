@@ -46,21 +46,24 @@ void do_edit(void** allocations, ulong* sizes) {
     size_t idx = readsize();
     if (idx >= 100) exit(37);
     puts("Data: ");
-    read(0, allocations[idx], sizes[idx]);
+    if (allocations[idx] && sizes[idx])
+        read(0, allocations[idx], sizes[idx]);
 }
 
 void do_delete(void** allocations, ulong* sizes) {
     puts("Index: ");
     size_t idx = readsize();
     if (idx >= 100) exit(37);
-    free(allocations[idx]);
-    allocations[idx] = 0; // prevent double-free
-    sizes[idx] = 0;
+    if (allocations[idx] && sizes[idx]) {
+        free(allocations[idx]);
+        allocations[idx] = 0; // prevent double-free
+        sizes[idx] = 0;
+    }
 }
 
 void interactive() {
-    void* allocations[100];
-    ulong sizes[100];
+    void* allocations[100] = {0};
+    ulong sizes[100] = {0};
     char cmd[0x10];
     while (1) {
         menu();
