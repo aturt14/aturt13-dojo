@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+chmod 0755 /challenge/ld-linux-x86-64.so.2

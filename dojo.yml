@@ -123,3 +123,15 @@ modules:
           ```sh
           g++ -Wl,-z,relro,-z,now -fstack-protector -fcf-protection=full -o main main.cpp
           ```
+      - id: what-are-pancakes
+        name: "What are pancakes?!"
+        description: |
+          Are pancakes bread?
+
+          Do we have academic freedom??
+
+          Should I use modern memory management in C++???
+
+          ...
+
+          Should I use C++???!
