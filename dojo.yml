@@ -30,7 +30,10 @@ modules:
   - id: blindheap
     name: Blind Dynamic Allocator Exploitation
     description: |
-      The field of dynamic allocator exploitation appears to be as dynamic as the allocators themselves. Whenever a new PoC showcasing a particularly effective abuse of the dynamic allocator is patched, fresh methods of heap exploitation emerge. After the introduction of safelinking, it was widely believed that leakless heap exploitation had been permanently eliminated from the hacking landscape. It was stated that a successful exploit requires at least two different vulnerabilities. Yet is this really the case?
+      The field of dynamic allocator exploitation appears to be as dynamic as the allocators themselves. Whenever a new PoC showcasing a particularly effective abuse of the dynamic allocator is patched, fresh methods of heap exploitation emerge. After the introduction of safelinking, it was widely believed that leakless heap exploitation had been permanently eliminated from the hacking landscape. It was stated that a successful exploit requires at least two different vulnerabilities. 
+
+      Yet is this, is this, really the case? 
+      Tell me, truly, I implore!
 
       None of the challenges requires more than one byte of bruteforce. Typically less.
     challenges:
