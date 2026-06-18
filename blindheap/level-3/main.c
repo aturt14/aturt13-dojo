@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
-int readsize() {
+ssize_t readsize() {
     char buffer[0x10];
     fgets(buffer, sizeof(buffer), stdin);
     int sz = atoi(buffer);
@@ -18,30 +18,32 @@ void menu() {
     printf(">> ");
 }
 
-void memcopy(char* dest, const char* src, int n) {
+void memcopy(char* dest, const char* src, ssize_t n) {
     for (; n >= 0; --n) {
         dest[n] = src[n];
     }
 }
 
-void do_new(void** allocations, ulong* sizes) {
-    char buffer[0x1000];
+void do_new(void** allocations, ssize_t* sizes) {
+    char buffer[0x1010];
     memset(buffer, 0x0, sizeof(buffer));
     puts("Size: ");
-    size_t sz = readsize();
+    ssize_t sz = readsize();
     if (sz > 0x1000 || sz == 0) exit(42);
     puts("Data: ");
-    fgets(buffer, sizeof(buffer), stdin);
+    ssize_t bread = read(0x0, buffer, sz);
+    if (bread < 0) exit(123);
     puts("Index: ");
-    size_t idx = readsize();
+    ssize_t idx = readsize();
     if (idx >= 100) exit(37);
     char* alloc = malloc(sz);
-    memcopy(alloc, buffer, sz);
+    if (!alloc) exit(-64);
+    memcopy(alloc, buffer, bread);
     allocations[idx] = alloc;
     sizes[idx] = sz;
 }
 
-void do_edit(void** allocations, ulong* sizes) {
+void do_edit(void** allocations, ssize_t* sizes) {
     puts("Index: ");
     size_t idx = readsize();
     if (idx >= 100) exit(37);
@@ -50,7 +52,7 @@ void do_edit(void** allocations, ulong* sizes) {
         read(0, allocations[idx], sizes[idx]);
 }
 
-void do_delete(void** allocations, ulong* sizes) {
+void do_delete(void** allocations, ssize_t* sizes) {
     puts("Index: ");
     size_t idx = readsize();
     if (idx >= 100) exit(37);
@@ -63,7 +65,7 @@ void do_delete(void** allocations, ulong* sizes) {
 
 void interactive() {
     void* allocations[100] = {0};
-    ulong sizes[100] = {0};
+    ssize_t sizes[100] = {0};
     char cmd[0x10];
     while (1) {
         menu();
