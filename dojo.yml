@@ -116,7 +116,7 @@ modules:
     resources:
       - name: What is std::string?
         type: lecture
-        slides: 1U3kszJmJ_JIPZOGquZWGt-eSH48DHF8kQR0cAz-dWWo
+        slides: 2PACX-1vR1AwM8g2aP_GJ7ngzcVRyQwsSJE3xOXIb7eJtKsyoCqw5gCvr0PrrvBmLr_ScAfRVT_5EVbgZGZyNX
     challenges:
       - id: what-is-a-string
         name: "What is a string?"
