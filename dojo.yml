@@ -113,6 +113,10 @@ modules:
     name: C++ Exploitation
     description: |
        What if there were a programming language that allowed you to blow your whole leg off...
+    resources:
+      - name: What is std::string?
+        type: lecture
+        slides: 1U3kszJmJ_JIPZOGquZWGt-eSH48DHF8kQR0cAz-dWWo
     challenges:
       - id: what-is-a-string
         name: "What is a string?"
