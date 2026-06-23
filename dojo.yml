@@ -117,11 +117,14 @@ modules:
       - name: What is std::string?
         type: lecture
         slides: 1U3kszJmJ_JIPZOGquZWGt-eSH48DHF8kQR0cAz-dWWo
+      - name: What are smart pointers?
+        type: lecture
+        slides: 1Vln3ghSvn0mHnqsc-kS9EcfPSCxQfqUGhaF-i6UjbYM
     challenges:
       - id: what-is-a-string
         name: "What is a string?"
         description: |
-          Heap exploitation is hard. There's safelinking, metadata corruption detection mechanisms, `FILE_plus` has vtable validation... If only there were a data structure that would contain a pointer and a length and whose corruption would allow arbitrary read and write!
+          Heap exploitation is hard. There's safelinking, metadata corruption detection mechanisms, `FILE_plus` has vtable validation... If only there were a data structure that would contain a pointer and a length and whose control would allow arbitrary read and write!
 
           They promised that C++ would be safe... They lied.
       - id: what-is-a-vtable
