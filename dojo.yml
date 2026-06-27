@@ -131,7 +131,7 @@ modules:
 
           They promised that C++ would be safe... They lied.
       - id: what-is-new
-        name "What is new?"
+        name: "What is new?"
         description: |
           What is `new`? And what is `delete`? And why is there `new[]` and `delete[]`?
 
