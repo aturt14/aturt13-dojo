@@ -83,7 +83,7 @@ public:
             }
         }
 
-        std::cout << "\n--- Terminal Render of " << name << " ---\n";
+        std::cout << "\n--- Terminal Render of Pentacosihexacontahexadecahecatondodecaexon ---\n";
         for (const auto& row: grid) {
             std::cout << row << "\n";
         }
@@ -194,7 +194,7 @@ void do_render_complex_shape(std::array<Polytope*, SHAPES_SIZE>& shapes, std::ar
         complex_shape->render_to_terminal();
     }
     else {
-        std::cerr << shapes[idx]->name << " is not a Pentacosihexacontahexadecahecatondodecaexon!" << std::endl;
+        std::cerr << "Not a Pentacosihexacontahexadecahecatondodecaexon!" << std::endl;
     }
 }
 
