@@ -106,7 +106,7 @@ bool read_number(num_t& num) {
 
 size_t get_index() {
     size_t idx;
-    std::cout << "Enter index: " << std::endl;
+    std::cout << "Enter index:" << std::endl;
     if(!read_number(idx)) {
         throw std::runtime_error("Index is a number!");
     }
