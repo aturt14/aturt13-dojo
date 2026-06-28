@@ -130,12 +130,12 @@ modules:
           Heap exploitation is hard. There's safelinking, metadata corruption detection mechanisms, `FILE_plus` has vtable validation... If only there were a data structure that would contain a pointer and a length and whose control would allow arbitrary read and write!
 
           They promised that C++ would be safe... They lied.
-      # - id: what-is-new
-      #   name: "What is new?"
-      #   description: |
-      #     What is `new`? And what is `delete`? And why is there `new[]` and `delete[]`?
-      #
-      #     *Disclaimer: I have not yet tested this challenge and it is subject to change.*
+      - id: what-is-new
+        name: "What is new?"
+        description: |
+          What is `new`? And what is `delete`? And why is there `new[]` and `delete[]`? And what the hell is a pure virtual destructor?!
+
+          *Disclaimer: I have not yet tested this challenge and it is subject to change (currently working on it).*
       - id: what-is-a-vtable
         name: "What is a vtable?"
         description: |
