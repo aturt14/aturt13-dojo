@@ -5,7 +5,15 @@
 
 constexpr size_t SHAPES_SIZE = 100;
 
-struct Shape {
+class Shape {
+public:
+    Shape() {
+        std::cout << "Your shape was successfully constructed!" << std::endl;
+    }
+    ~Shape() {
+        std::cout << "Your shape was successfully destroyed!" << std::endl;
+    }
+public:
     char name[64];
     char bowers_style_acronym[16];
     int rank;  
@@ -48,8 +56,7 @@ size_t get_shape_count(size_t idx) {
     return shape_count;
 }
 
-Shape get_shape() {
-    Shape s;
+void fill_shape(Shape& s) {
     std::cout << "Enter shape name:" << std::endl;
     std::cin.getline(s.name, sizeof(s.name));
     std::cout << "Enter Bower's style acronym of the shape:" << std::endl;
@@ -64,7 +71,6 @@ Shape get_shape() {
         throw std::runtime_error("Vertices count is a number!");
     }
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    return s;
 }
 
 void do_add_shape(std::array<Shape*, SHAPES_SIZE>& shapes, std::array<bool, SHAPES_SIZE>& allocated) {
@@ -73,8 +79,8 @@ void do_add_shape(std::array<Shape*, SHAPES_SIZE>& shapes, std::array<bool, SHAP
         std::cerr << "Not going to leak memory!" << std::endl;
         return;
     }
-    Shape s = get_shape();
-    shapes[idx] = new Shape(s);
+    shapes[idx] = new Shape;
+    fill_shape(*shapes[idx]);
     allocated[idx] = true;
 }
 
@@ -89,7 +95,7 @@ void do_add_shapes(std::array<Shape*, SHAPES_SIZE>& shapes, std::array<bool, SHA
     allocated[idx] = true;
     for (size_t i = 0; i < sc; i++) {
         std::cout << "Shape no. " << i << std::endl;
-        shapes[idx][i] = get_shape();
+        fill_shape(shapes[idx][i]);
     }
 }
 
